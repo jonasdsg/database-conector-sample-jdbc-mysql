@@ -1,0 +1,10 @@
+
+//Comando para criar o container
+docker run -e MYSQL_ROOT_PASSWORD=mysql -e MYSQL_DATABASE=database_teste -e MYSQL_USER=mysql -p 3306:3306 -d mysql:5-debian
+
+//comando para criar a tabela.
+docker exec -it $(docker ps -q) sh
+mysql -h localhost -u root -p (ENTER)
+DIGITE A SENHA, A SENHA É mysql (ENTER)
+use database_teste;
+create table nomes(nome varchar(255));
